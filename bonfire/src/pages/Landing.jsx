@@ -40,10 +40,20 @@ export default function Home() {
   const [imageHeight, setImageHeight] = useState(0);
 
   useEffect(() => {
-    if (phoneImageRef.current) {
-      setImageHeight(0.8 * phoneImageRef.current.clientHeight);
-    }
-  }, [phoneImageRef.current?.clientHeight]);
+    const updateImageHeight = () => {
+      if (phoneImageRef.current) {
+        setImageHeight(phoneImageRef.current.clientHeight * 0.8);
+      }
+    };
+    // Initial call to set image height
+    updateImageHeight();
+    // Listen to window resize events
+    window.addEventListener("resize", updateImageHeight);
+    return () => {
+      window.removeEventListener("resize", updateImageHeight);
+    };
+  }, []);
+
   const openTawkToChat = () => {
     if (window.Tawk_API) {
       window.Tawk_API.maximize();
@@ -83,7 +93,7 @@ export default function Home() {
               <Button as={ReactRouterLink} to="/repair/quote-1" colorScheme="red" size="lg" backgroundColor="highlight.500"> Get a free quote now. </Button>
             </VStack>
             <VStack height={imageHeight} alignItems="center" justifyContent="center">
-              <Image src={devices} height="100%" alt="Devices"/>
+              <Image src={devices} height="100%" alt="Devices" />
             </VStack>
           </Flex>
           <Flex direction={{ base: "column", md: "row-reverse" }} bg="bg.300" color="white" align="center" zIndex="1" paddingLeft="5vw" gap="5vw">

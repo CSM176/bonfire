@@ -32,7 +32,7 @@ const ImageUpload2 = ({ repairimage }) => {
   useEffect(() => {
     const checkQuoteExistence = async () => {
       try {
-        const response = await fetch(`http://192.168.1.9:1337/api/quotes/${id}`);
+        const response = await fetch(`http://admin.bonfirepcs.com/api/quotes/${id}`);
         if (!response.ok) {
           throw new Error('Quote does not exist');
         }
@@ -124,7 +124,7 @@ const ImageUpload2 = ({ repairimage }) => {
     selectedFiles.forEach(file => formData.append('files', file));
 
     try {
-      const uploadResponse = await fetch('http://192.168.1.9:1337/api/upload', {
+      const uploadResponse = await fetch('http://admin.bonfirepcs.com/api/upload', {
         method: 'POST',
         body: formData,
       });
@@ -136,7 +136,7 @@ const ImageUpload2 = ({ repairimage }) => {
       const uploadData = await uploadResponse.json();
       const imageIds = uploadData.map(file => file.id);
 
-      const quoteResponse = await fetch(`http://192.168.1.9:1337/api/quotes/${id}`, {
+      const quoteResponse = await fetch(`http://admin.bonfirepcs.com/api/quotes/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
