@@ -83,7 +83,7 @@ export default function Home() {
               <Button as={ReactRouterLink} to="/repair/quote-1" colorScheme="red" size="lg" backgroundColor="highlight.500"> Get a free quote now. </Button>
             </VStack>
             <VStack height={imageHeight} alignItems="center" justifyContent="center">
-              <Image src={devices} height="100%" alt="Devices" />
+              <Image src={devices} height="100%" alt="Devices"/>
             </VStack>
           </Flex>
           <Flex direction={{ base: "column", md: "row-reverse" }} bg="bg.300" color="white" align="center" zIndex="1" paddingLeft="5vw" gap="5vw">
