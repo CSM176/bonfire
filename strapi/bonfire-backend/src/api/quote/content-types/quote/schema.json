@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quotes",
+  "info": {
+    "singularName": "quote",
+    "pluralName": "quotes",
+    "displayName": "quote",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "DeviceType": {
+      "type": "enumeration",
+      "enum": [
+        "Laptop",
+        "Desktop",
+        "Phone",
+        "Other"
+      ]
+    },
+    "DeviceName": {
+      "type": "string"
+    },
+    "ProblemDescription": {
+      "type": "text"
+    },
+    "DevicePhotos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "ProblemType": {
+      "type": "enumeration",
+      "enum": [
+        "Not running well",
+        "Cracked/Damaged Screen",
+        "Keyboard/Trackpad Damage",
+        "Other Damage",
+        "Not turning on",
+        "Software issues",
+        "Backup and Data Recovery",
+        "Malware and Virus Removal",
+        "Other",
+        "Damaged Parts"
+      ]
+    },
+    "DeviceModel": {
+      "type": "string"
+    },
+    "DeviceBrand": {
+      "type": "string"
+    },
+    "Year": {
+      "type": "string"
+    },
+    "SerialNumber": {
+      "type": "string"
+    },
+    "DesktopDescription": {
+      "type": "text"
+    },
+    "Phone": {
+      "type": "string"
+    },
+    "Postcode": {
+      "type": "string"
+    }
+  }
+}
