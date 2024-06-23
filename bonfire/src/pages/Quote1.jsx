@@ -70,7 +70,7 @@ const RepairForm = () => {
     try {
       await sendEmail(formData);
   
-      const response = await fetch('http://admin.bonfirepcs.com/api/quotes', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ "data": { "Name": formData.get('name'), "Phone": formData.get('phone'), "Email": formData.get('email'), "DeviceType": formData.get('device-type'), "DeviceName": formData.get('device-name') } }), });
+      const response = await fetch('https://admin.bonfirepcs.com/api/quotes', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ "data": { "Name": formData.get('name'), "Phone": formData.get('phone'), "Email": formData.get('email'), "DeviceType": formData.get('device-type'), "DeviceName": formData.get('device-name') } }), });
   
       if (!response.ok) {
         throw new Error('Failed to create customer');

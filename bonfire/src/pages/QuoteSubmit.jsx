@@ -60,7 +60,7 @@ const QuoteSubmitted = ({ repairimage }) => {
   useEffect(() => {
     const checkQuoteExistence = async () => {
       try {
-        const response = await fetch(`http://admin.bonfirepcs.com/api/quotes/${id}`);
+        const response = await fetch(`https://admin.bonfirepcs.com/api/quotes/${id}`);
         if (!response.ok) {
           throw new Error('Quote does not exist');
         }
@@ -141,7 +141,7 @@ const QuoteSubmitted = ({ repairimage }) => {
     const formData = new FormData();
 
     try {
-      const quoteResponse = await fetch(`http://admin.bonfirepcs.com/api/quotes/${id}`, {
+      const quoteResponse = await fetch(`https://admin.bonfirepcs.com/api/quotes/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
