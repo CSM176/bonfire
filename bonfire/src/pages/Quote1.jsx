@@ -91,7 +91,7 @@ const RepairForm = () => {
 
   const sendEmail = async (data) => {
     try {
-      await emailjs.send("service_omro8as", "template_s2h32uf", { to_email: data.get('email'), customer_name: data.get('name'), customer_phone: data.get('phone'), message: `Device Type: ${data.get('device-type')}, Device Name: ${data.get('device-name')}`, }, "noSKe9q4pG9tTE82k");
+      await emailjs.send("service_3eh0pwm", "template_s2h32uf", { to_email: data.get('email'), customer_name: data.get('name'), customer_phone: data.get('phone'), message: `Device Type: ${data.get('device-type')}, Device Name: ${data.get('device-name')}`, }, "noSKe9q4pG9tTE82k");
       console.log('Email sent successfully!');
     } catch (error) {
       console.error('Error sending email:', error);

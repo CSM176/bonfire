@@ -33,7 +33,7 @@ export default function ContactCard(props) {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    "service_id": "service_omro8as",
+                    "service_id": "service_3eh0pwm",
                     "template_id": "template_1vg68h3",
                     "user_id": "noSKe9q4pG9tTE82k",
                     "template_params": {
